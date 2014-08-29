@@ -1,0 +1,27 @@
+body {
+  padding: 0px;
+  font: 14px "Helvetica", Arial, sans-serif;
+}
+a {
+  color: #00b7ff;
+}
+#myCanvas {
+  z-index: 1;
+  cursor: none;
+}
+#player1Bat {
+  color: #f00;
+  background-color: #f00;
+  width: 15px;
+  height: 80px;
+  position: absolute;
+  z-index: 200;
+}
+#player2Bat {
+  color: #00f;
+  background-color: #00f;
+  width: 15px;
+  height: 80px;
+  position: absolute;
+  z-index: 200;
+}
