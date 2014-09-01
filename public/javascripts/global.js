@@ -27,12 +27,14 @@ var myCanvas = document.getElementById("myCanvas");
 var player1BatObject = document.getElementById("player1Bat");
 var player2BatObject = document.getElementById("player2Bat");
 
+var intervalDraw = null;
+
 
 function init()
 {
     player1Bat();
     player2Bat();
-    setInterval(draw,10);
+    intervalDraw = setInterval(draw,10);
 }
 
 $(document).ready(function(){
@@ -55,7 +57,7 @@ $(document).ready(function(){
                 "gameCode": gameCode,
                 "player": player,
                 "mouseY": e.pageY
-            }
+            };
             socket.emit('mouseMove', data);
         }
     });
@@ -104,6 +106,7 @@ function draw()
             {
                 //player1 missed
                 player2Score++;
+                clearInterval(intervalDraw);
             }
         }
     }
@@ -116,6 +119,7 @@ function draw()
             else
             {
                 player1Score++;
+                clearInterval(intervalDraw);
             }
         }
     }

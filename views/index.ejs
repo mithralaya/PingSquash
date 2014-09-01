@@ -3,15 +3,32 @@
   <head>
     <title>PingSquash</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="https://cdn.socket.io/socket.io-1.0.6.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </head>
   <body onload="init();">
-    <h1>PingSquash</h1>
-    <input type="text" id="player" />
-    <canvas id="myCanvas"></canvas>
-    <div id="player1Bat"></div>
-    <div id="player2Bat"></div>
+    <div class="container-fluid">
+        <h1 style="font-weight: 900; font-size:52px; margin:10px auto;">PingSquash</h1>
+        <div class="step1">
+            <button type="button" class="btn btn-success btn-lg">New Game</button>
+            <button type="button" class="btn btn-primary btn-lg">Join</button>
+        </div>
+        <div class="newGame">
+            <h2 class="gameCode" id="gameCode"></h2>
+            <input type="text" value="" name="player1NickName" id="player1NickName" />
+        </div>
+        <div class="join">
+            <input type="text" value="" name="player2NickName" id="player2NickName" />
+            <input type="text" value="" name="gameCode" id="joinGameCode" />
+        </div>
+        <div class="gameWindow">
+            <canvas id="myCanvas"></canvas>
+            <div id="player1Bat"></div>
+            <div id="player2Bat"></div>
+        </div>
+    </div>
   </body>
   <script type="text/javascript" src="javascripts/global.js"></script>
 </html>
