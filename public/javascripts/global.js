@@ -100,6 +100,11 @@ function draw()
             {
                 dx = -dx;
             }
+            else
+            {
+                //player1 missed
+                player2Score++;
+            }
         }
     }
     if(player = 2){
@@ -107,6 +112,10 @@ function draw()
             if(y >= player2BatY - 115 && y <= (player2BatY + 80 - 115))
             {
                 dx = -dx;
+            }
+            else
+            {
+                player1Score++;
             }
         }
     }
@@ -121,11 +130,11 @@ function draw()
 }
 
 socket.on('mouseMove', function (data) {
-    if(data.player == 1)
+    if(data.player == 1 && data.gameCode == gameCode)
     {
         player1BatObject.style.top = data.mouseY + "px";
     }
-    if(data.player == 2)
+    if(data.player == 2 && data.gameCode == gameCode)
     {
         player2BatObject.style.top = data.mouseY + "px";
     }
